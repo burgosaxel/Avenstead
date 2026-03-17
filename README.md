@@ -61,6 +61,43 @@ npm run typecheck
 npm run build
 ```
 
+## Live deployment
+
+GitHub Pages is not the right host for this app. Avenstead is a real Next.js application with Firebase-backed auth and app routes, so GitHub Pages can end up showing repo content or a static fallback instead of the actual web app.
+
+Deploy the site with Firebase Hosting instead.
+
+1. Install the Firebase CLI if needed.
+
+```bash
+npm install -g firebase-tools
+```
+
+2. Log in to Firebase.
+
+```bash
+firebase login
+```
+
+3. Confirm this repo is linked to the correct Firebase project.
+
+```bash
+firebase use avenstead
+```
+
+4. Deploy Hosting.
+
+```bash
+firebase deploy --only hosting
+```
+
+The repo now includes:
+
+- [`firebase.json`](/c:/Users/burgo/FamilyLifeAdminAutopilot%20v2/firebase.json): Firebase Hosting config for the Next.js app
+- [`.firebaserc`](/c:/Users/burgo/FamilyLifeAdminAutopilot%20v2/.firebaserc): default Firebase project mapping for `avenstead`
+
+If you previously enabled GitHub Pages for this repo, disable it in GitHub Settings so the public repo URL does not point to the wrong site.
+
 ## Firebase collections
 
 Top-level collections used by the app:
